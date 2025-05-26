@@ -24,18 +24,22 @@ javascript: (function () {
 
     /* 以下のURLとハッシュタグのマッピングに従ってカテゴリタグを上書き */
     const taglist = {
-	    /* テンプレ
-		'':'#',
-		'':'#',
-		'':'#',
-		*/
-		'www.rugby-japan.jp':'#JapanRugby',
-		'league-one.jp':'#リーグワン',
-	    'ncode.syosetu.com/n4750dy':'#本好きの下剋上',
-		'mypage.syosetu.com/372556/':' #本好きの下剋上',
-	    'www.tbsradio.jp/ss954':'#ss954',
-	    'www.jaxa.jp':'#jaxa',
-	    'www.nicovideo.jp':'#nowwatching',
+        /* テンプレ
+        '':'#',
+        '':'#',
+        '':'#',
+        */
+        'www.rugby-japan.jp':'#JapanRugby',
+        'league-one.jp':'#リーグワン',
+        'rugby-rp.com':'#JapanRugby #リーグワン',
+        'news.jsports.co.jp/column/rugby':'#JapanRugby #リーグワン',
+        'tobooks':'#本好きの下剋上',
+        'ncode.syosetu.com/n4750dy':'#本好きの下剋上',
+        'ncode.syosetu.com/n7835cj':'#本好きの下剋上',
+        'mypage.syosetu.com/372556/':' #本好きの下剋上',
+        'www.tbsradio.jp':'#ss954',
+        'www.jaxa.jp':'#jaxa',
+        'www.nicovideo.jp':'#nowwatching',
         'seiga.nicovideo.jp':'#nowwatching',
         'live.nicovideo.jp':'#nowwatching',
         'www.youtube.com':'#nowwatching',
