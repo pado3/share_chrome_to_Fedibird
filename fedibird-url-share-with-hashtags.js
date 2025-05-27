@@ -1,6 +1,6 @@
 javascript: (function () {
     let title = document.title;
-    const url = document.URL;
+    let url = document.URL; // 現在のページのURL,クエリ除去処理を入れたのでletで宣言
     const hashtagsearch = /\s*#\S+/g;
     const hashsearch = /#/g;
 
@@ -29,21 +29,23 @@ javascript: (function () {
         '':'#',
         '':'#',
         */
-        'www.rugby-japan.jp':'#JapanRugby',
-        'league-one.jp':'#リーグワン',
-        'rugby-rp.com':'#JapanRugby #リーグワン',
-        'news.jsports.co.jp/column/rugby':'#JapanRugby #リーグワン',
-        'tobooks':'#本好きの下剋上',
-        'ncode.syosetu.com/n4750dy':'#本好きの下剋上',
-        'ncode.syosetu.com/n7835cj':'#本好きの下剋上',
-        'mypage.syosetu.com/372556/':' #本好きの下剋上',
-        'www.tbsradio.jp':'#ss954',
-        'www.jaxa.jp':'#jaxa',
-        'www.nicovideo.jp':'#nowwatching',
-        'seiga.nicovideo.jp':'#nowwatching',
-        'live.nicovideo.jp':'#nowwatching',
-        'www.youtube.com':'#nowwatching',
-        'music.youtube.com':'#nowplaying'
+        'www.rugby-japan.jp':'#JapanRugby', // 日本ラグビー協会
+        'league-one.jp':'#リーグワン',        // リーグワン
+        'rugby-rp.com':'#JapanRugby #リーグワン',   // ラグビーリパブリック
+        'news.jsports.co.jp/column/rugby':'#JapanRugby #リーグワン',    // J SPORTS ラグビーコラム
+        'tobooks':'#本好きの下剋上',    // TOBOOKS、本好きの下剋上以外の作品に注意
+        'ncode.syosetu.com/n4750dy':'#本好きの下剋上',  // なろう ハンネローレ
+        'ncode.syosetu.com/n7835cj':'#本好きの下剋上',  // なろう 本好きのSS
+        'mypage.syosetu.com/mypageblog/list/userid/372556':'#本好きの下剋上',   // 香月美夜先生活動報告（割烹）
+        'mypage.syosetu.com/372556':' #本好きの下剋上',     // 香月美夜先生トップ
+        'www.tbsradio.jp':'#ss954', // 荻上チキ・ Session
+        'www.jaxa.jp':'#jaxa',  // JAXA
+        'www.jma.go.jp':'#気象庁', // 気象庁
+        'www.nicovideo.jp':'#nowwatching',  // ニコニコ動画
+        'seiga.nicovideo.jp':'#nowwatching',    // ニコニコ静画
+        'live.nicovideo.jp':'#nowwatching',   // ニコニコ生放送
+        'www.youtube.com':'#nowwatching',   // YouTube
+        'music.youtube.com':'#nowplaying'   // YouTube Music
     };
     for (key in taglist){
         if (url.includes(key)){
@@ -62,7 +64,14 @@ javascript: (function () {
     /* タイトルのハッシュを置換してハッシュタグリンク化を回避 */
     title = title.replace(hashsearch,'＃');
 
-    /* 本文 タグ文字列はhashtag-barに乗せるため、手前に空行を挟む */
+    /* 投稿前にURLのクエリを除去する */
+    const urlsearch = /\?.*$/;
+    if (url.match(urlsearch)) {
+        url = url.replace(urlsearch, '');
+    }
+
+    /* 本文 自分好みの書式にする */
+    /* 冒頭スペース・タグ・スラッシュ改行・タイトル・ハイフォン・URL */
     const text = ' ' + tags + ' /\n' + title + ' - ' + url;
 
     /* 投稿フォーム画面を開く（ポップアップ） */
