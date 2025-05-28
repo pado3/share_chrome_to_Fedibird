@@ -1,13 +1,1 @@
-{
-	"manifest_version": 3,
-	"name": "share to Fedibird w/hashtags",
-	"version": "2.0",
-	"description": "FedibirdにwebのタイトルとURLをシェアする私製機能拡張。ひこ @hiko_p@fedibird.com さん作成のハッシュタグ付きでシェアするJavascriptを、パドラッパ @pado3@fedibird.com が部分改変して機能拡張にしたものです",
-	"permissions": ["activeTab", "scripting"],
-	"action": {
-		"default_icon": "fedibird-url-share.png"
-	},
-	"background": {
-		"service_worker": "background.js"
-	}
-}
+/* I uploaded it by mistake, so I deleted it. */
